@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/card.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+/>
+<!-- CSS only -->
+{{ $data := index .Site.Data (.Get 0) }} {{ range $data }}
+
+<div class="card">
+  <img src="{{ .img }}" alt="Avatar" style="width: 100%" />
+  <div class="details">
+    <h5><b>{{ .MovieName }}</b></h5>
+
+    <p>Duration: {{ .Duration }}</p>
+    <p>Rating: {{ .Rating }}</p>
+    <i onclick="Like(this)" class="far fa-heart"></i>
+    <span>Like</span>
+  </div>
+</div>
+{{ end }}
+<script>
+  function Like(x) {
+    x.classList.toggle("fas");
+  }
+</script>
