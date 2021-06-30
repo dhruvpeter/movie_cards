@@ -6,6 +6,8 @@ Tags: []
 Categories: []
 ---
 
-## Movie Details
+{{< center-title >}}
+Movie Details
+{{< /center-title >}}
 
 {{< card "moviedata2">}}
