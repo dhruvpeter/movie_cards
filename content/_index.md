@@ -8,4 +8,4 @@ Categories: []
 
 ## Movie Details
 
-{{< card "moviedata">}}
+{{< card "moviedata2">}}
