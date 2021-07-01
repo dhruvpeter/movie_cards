@@ -1,0 +1,24 @@
+{{ define "main" }}
+<script>
+  window.onload = function () {
+    const params = new URLSearchParams(document.location.search);
+    const id = params.get("id");
+    document.getElementById("output").innerHTML = id;
+    console.log(id);
+    var i = document.getElementById("image");
+    i.src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
+    document.getElementById("result").innerHTML = localStorage.getItem("name");
+  };
+</script>
+<h1>{{ .Title }}</h1>
+<br /><br />
+{{ .Content }}
+<br />
+<p id="output"></p>
+<p id = "result"></p>
+<img id ="image"/>
+{{.Permalink}}
+{{ $url := urls.Parse "{{.Permalink}}" }}
+{{ $url.Scheme }}
+{{ $url.Host }}
+{{ end }}
