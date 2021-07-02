@@ -1,6 +1,5 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/moviedetails.css" />
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
   window.onload = function () {
     //Gets id and json file name from url
@@ -10,10 +9,14 @@
     console.log(id);
 
     console.log(jsonfile);
-    //Json file name is hardcoded. Have to change that
-    {{ $json :=  index .Site.Data.moviedata2}};
-
-
+    //Current setup only supports for 2 json files, find a better way to read the json file 
+    if(jsonfile == "moviedata"){
+      {{ $jsonfilename := "moviedata"}};
+    }
+    else if(jsonfile == "moviedata2"){
+      {{ $jsonfilename := "moviedata2"}};
+    }
+    {{ $json :=  index .Site.Data ($jsonfilename)}};
 
     const data = {{ $json }};
     //Storing array of objects to js variable and filtering the array using id
