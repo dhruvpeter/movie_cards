@@ -1,24 +1,59 @@
 {{ define "main" }}
+<link rel="stylesheet" href="/css/moviedetails.css" />
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
   window.onload = function () {
+    //Gets id and json file name from url
     const params = new URLSearchParams(document.location.search);
     const id = params.get("id");
-    document.getElementById("output").innerHTML = id;
+    const jsonfile = params.get("data");
     console.log(id);
+
+    console.log(jsonfile);
+    //Json file name is hardcoded. Have to change that
+    {{ $json :=  index .Site.Data.moviedata2}};
+
+
+
+    const data = {{ $json }};
+    //Storing array of objects to js variable and filtering the array using id
+
+    console.log(data)
+    let filterdata = data.filter(function (e) {
+      return e.id == id;
+    });
+    const movie = filterdata[0];
+    console.log(movie.MovieName);
+
+    //Changing the content of html using the json data
+    document.getElementById("moviename").innerHTML = movie.MovieName
     var i = document.getElementById("image");
-    i.src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
-    document.getElementById("result").innerHTML = localStorage.getItem("name");
+    i.src = movie.img;
+    document.getElementById("description").innerHTML = movie.Description
+    document.getElementById("rating").innerHTML = "Rating: " + movie.Rating
+    document.getElementById("duration").innerHTML = "Duration: " + movie.Duration
+    document.getElementById("genre").innerHTML = "Genres: " + movie.Genre
+
+    // document.getElementById("output").innerHTML = id;
+
+    // var i = document.getElementById("image");
+    // i.src =
+    //   "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
   };
 </script>
-<h1>{{ .Title }}</h1>
 <br /><br />
-{{ .Content }}
+<!-- {{ .Content }} -->
 <br />
-<p id="output"></p>
-<p id = "result"></p>
-<img id ="image"/>
-{{.Permalink}}
-{{ $url := urls.Parse "{{.Permalink}}" }}
-{{ $url.Scheme }}
-{{ $url.Host }}
+<div class="movie-container">
+  <div id="moviename"></div>
+  <div class="image-container"><img id="image" alt="picture" /></div>
+  <div class="details">
+    <div id="description"></div>
+    <br/>
+    <div id="rating"></div>
+    <div id="duration"></div>
+    <div id="genre"></div>
+  </div>
+
+</div>
 {{ end }}

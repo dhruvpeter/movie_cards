@@ -3,7 +3,8 @@
   transition: 0.3s;
   width: 200px;
   margin: 10px 10px 10px 0px;
-
+  border-radius: 15px;
+  perspective: 1px;
   height: 450px;
   float: left;
 }
