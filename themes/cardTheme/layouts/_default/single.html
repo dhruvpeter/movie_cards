@@ -1,0 +1,62 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/moviedetails.css" />
+<script>
+  window.onload = function () {
+    //Gets id and json file name from url
+    const params = new URLSearchParams(document.location.search);
+    const id = params.get("id");
+    const jsonfile = params.get("data");
+    console.log(id);
+
+    console.log(jsonfile);
+    //Current setup only supports for 2 json files, find a better way to read the json file 
+    if(jsonfile == "moviedata"){
+      {{ $jsonfilename := "moviedata"}};
+    }
+    else if(jsonfile == "moviedata2"){
+      {{ $jsonfilename := "moviedata2"}};
+    }
+    {{ $json :=  index .Site.Data ($jsonfilename)}};
+
+    const data = {{ $json }};
+    //Storing array of objects to js variable and filtering the array using id
+
+    console.log(data)
+    let filterdata = data.filter(function (e) {
+      return e.id == id;
+    });
+    const movie = filterdata[0];
+    console.log(movie.MovieName);
+
+    //Changing the content of html using the json data
+    document.getElementById("moviename").innerHTML = movie.MovieName
+    var i = document.getElementById("image");
+    i.src = movie.img;
+    document.getElementById("description").innerHTML = movie.Description
+    document.getElementById("rating").innerHTML = "Rating: " + movie.Rating
+    document.getElementById("duration").innerHTML = "Duration: " + movie.Duration
+    document.getElementById("genre").innerHTML = "Genres: " + movie.Genre
+
+    // document.getElementById("output").innerHTML = id;
+
+    // var i = document.getElementById("image");
+    // i.src =
+    //   "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
+  };
+</script>
+<br /><br />
+<!-- {{ .Content }} -->
+<br />
+<div class="movie-container">
+  <div id="moviename"></div>
+  <div class="image-container"><img id="image" alt="picture" /></div>
+  <div class="details">
+    <div id="description"></div>
+    <br/>
+    <div id="rating"></div>
+    <div id="duration"></div>
+    <div id="genre"></div>
+  </div>
+
+</div>
+{{ end }}

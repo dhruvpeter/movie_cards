@@ -7,5 +7,3 @@ Categories: []
 url: /moviedetails/
 
 ---
-
-Singles Page
