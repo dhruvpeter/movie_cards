@@ -9,16 +9,11 @@
     console.log(id);
 
     console.log(jsonfile);
-    //Current setup only supports for 2 json files, find a better way to read the json file 
-    if(jsonfile == "moviedata"){
-      {{ $jsonfilename := "moviedata"}};
-    }
-    else if(jsonfile == "moviedata2"){
-      {{ $jsonfilename := "moviedata2"}};
-    }
-    {{ $json :=  index .Site.Data ($jsonfilename)}};
-
-    const data = {{ $json }};
+    //Loads every json file present in the Data folder 
+    const jsondata = {{ index .Site.Data }};
+    console.log(jsondata);
+    //Gets the right json file by using the filename param in url
+    const data = jsondata[jsonfile];
     //Storing array of objects to js variable and filtering the array using id
 
     console.log(data)
@@ -52,11 +47,10 @@
   <div class="image-container"><img id="image" alt="picture" /></div>
   <div class="details">
     <div id="description"></div>
-    <br/>
+    <br />
     <div id="rating"></div>
     <div id="duration"></div>
     <div id="genre"></div>
   </div>
-
 </div>
 {{ end }}

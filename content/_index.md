@@ -10,4 +10,4 @@ Categories: []
 Movie Details
 {{< /center-title >}}
 
-{{< card "moviedata2">}}
+{{< card "moviedata">}}
