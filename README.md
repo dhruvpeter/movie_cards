@@ -1,3 +1,7 @@
+#About this project
+
+---
+This project is a website for displaying movie details implemented using [Hugo](https://gohugo.io/) framework
 # Using the site
 
 ---
