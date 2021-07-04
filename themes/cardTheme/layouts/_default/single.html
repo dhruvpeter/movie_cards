@@ -1,4 +1,5 @@
 {{ define "main" }}
+<!-- CSS files-->
 <link rel="stylesheet" href="/css/moviedetails.css" />
 <script>
   window.onload = function () {
@@ -9,7 +10,7 @@
     console.log(id);
 
     console.log(jsonfile);
-    //Loads every json file present in the Data folder 
+    //Loads every json file present in the Data folder
     const jsondata = {{ index .Site.Data }};
     console.log(jsondata);
     //Gets the right json file by using the filename param in url
@@ -31,16 +32,10 @@
     document.getElementById("rating").innerHTML = "Rating: " + movie.Rating
     document.getElementById("duration").innerHTML = "Duration: " + movie.Duration
     document.getElementById("genre").innerHTML = "Genres: " + movie.Genre
-
-    // document.getElementById("output").innerHTML = id;
-
-    // var i = document.getElementById("image");
-    // i.src =
-    //   "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
   };
 </script>
 <br /><br />
-<!-- {{ .Content }} -->
+
 <br />
 <div class="movie-container">
   <div id="moviename"></div>

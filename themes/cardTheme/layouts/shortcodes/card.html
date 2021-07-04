@@ -1,13 +1,19 @@
+<!-- CSS files -->
 <link rel="stylesheet" href="/css/card.css" />
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
 />
+
+<!-- Gets the parameter(json file name) -->
 {{ $jsonfile := (.Get 0)}}
 
-{{ $data := index .Site.Data (.Get 0) }} {{ range $data }}
+<!-- Loads the json file array into "data" and iterates through it -->
+{{ $data := index .Site.Data (.Get 0) }}
+{{ range $data }}
+<!-- This div will be repeating -->
 <div class="card">
-
+  <!-- Passing the movie id and json file name as parameters through url -->
   <a href="/moviedetails?id={{ .id }}&data={{ $jsonfile }}" style="color: inherit">
     <img src="{{ .img }}" alt="Avatar" style="width: 100%" />
   </a>
@@ -23,7 +29,9 @@
 </div>
 
 {{ end }}
+
 <script>
+  // Function to toggle between two icons on clicking like
   function Like(x) {
     x.classList.toggle("fas");
   }
