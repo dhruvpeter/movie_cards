@@ -27,6 +27,7 @@ Checkout https://gohugo.io/getting-started/quick-start/ for getting started.
 - [Getting example site from the theme](#getting-example-site-from-the-theme)  
 - [Creating a new theme](#creating-a-new-theme)
 - [Variables](#variables)
+- [Functions](#functions) 
 - [Front Matter](#front-matter)
 - [Archetypes](#archetypes)
 - [Shortcodes](#shortcodes)
@@ -75,11 +76,21 @@ https://www.zeolearn.com/magazine/develop-a-theme-for-hugo
 ## Variables
 * Variables can only be used inside templates and layouts, not inside content.
 * The basic syntax of go html template looks like this `{{ args }}`
-* Example of variable:\
-  `{{ .Title }}` is used for accessing the title for this page.
+* Example of variable:
+  * `.Title` - title for this page.
+  * `.Site.Title` - a string representing the title of the site.
+  * `.RelPermalink` - the relative permanent link for this page.
+  * `.PublishDate` - the date on which the content was or will be published.
+  * `.Content` - the content itself, defined below the front matter.
 * Variables $ : Hugo also lets you create your own custom variables. Here you can store values to use in your layouts. To create a custom variable use the following notation:\
 `{{ $myVar := value }}` : assigns value to $myVar\
 `{{ $myVar }}` : prints $myVar
+## Functions
+* There are some functions already available with hugo. Some examples:
+  * `.Param` -  Calls page or site variables into your template.
+  * `range` - Iterates over a map, array, or slice.
+  * `where` - Filters an array to only the elements containing a matching value for a given field.
+  
 ## Front Matter
 * Example:
   
