@@ -155,6 +155,7 @@ https://www.zeolearn.com/magazine/develop-a-theme-for-hugo
 * A new folder `public` will be created containing your finished website.
 * `public` folder is overwritten when building, if you delete a file in your content folder, it won’t be deleted in the public folder.  
 * So delete the `public` folder before a re-build. 
+* To build websites into `docs` folder, add `publishDir : "docs"` to config.toml
 ## Notes
 * All the templates are placed inside the layout.
 * 2 types of content - List and Single

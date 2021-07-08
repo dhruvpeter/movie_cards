@@ -13,4 +13,4 @@ Movie Details
 <!-- Short code to create the card tiles for each movie
 We pass the json files' name as paramater
 json file contains the data for movies -->
-{{< card "moviedata">}}
+{{< card "moviedata2">}}
