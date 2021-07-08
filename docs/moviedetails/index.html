@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+    <title>Movies | Moviedetails</title>
+</head><body><div id="content" class="container-fluid">
+
+<link rel="stylesheet" href="../css/moviedetails.css" />
+<script>
+  window.onload = function () {
+    
+    const params = new URLSearchParams(document.location.search);
+    const id = params.get("id");
+    const jsonfile = params.get("data");
+    console.log(id);
+
+    console.log(jsonfile);
+    
+    const jsondata = {"moviedata":[{"Description":"The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of millions of dollars around Los Angeles each week.","Duration":"1h 59min","Genre":"Action, Crime, Thriller","MovieName":"Wrath of Man","Rating":"7.2/10","id":1,"img":"https://m.media-amazon.com/images/M/MV5BNGVkOTlhOTktNjZiNS00NDg3LWIxMDAtZTY5Y2E0YjllN2IxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"The bodyguard Michael Bryce continues his friendship with assassin Darius Kincaid as they try to save Darius' wife Sonia.","Duration":" 1h 40min ","Genre":"Action, Comedy, Crime","MovieName":"The Hitman's Wife's Bodyguard","Rating":"6.5/10","id":2,"img":"https://m.media-amazon.com/images/M/MV5BNGQ2MGQ1ZGQtOTY4MS00ZDA5LWE5YmUtMGE0YTE2YTZiODZkXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"A bystander who intervenes to help a woman being harassed by a group of men becomes the target of a vengeful drug lord.","Duration":"1h 32min","Genre":"Action, Crime, Drama","MovieName":"Nobody","Rating":"7.4/10","id":3,"img":"https://m.media-amazon.com/images/M/MV5BMjM5YTRlZmUtZGVmYi00ZjE2LWIyNzAtOWVhMDk1MDdkYzhjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.","Duration":"2h 22min","Genre":"Drama","MovieName":"The Shawshank Redemption","Rating":"9.3/10","id":4,"img":"https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.","Duration":"2h 55min","Genre":"Crime, Drama","MovieName":"The Godfather","Rating":"9.2/10","id":5,"img":"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL__QL50.jpg"},{"Description":"The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of millions of dollars around Los Angeles each week.","Duration":"1h 59min","Genre":"Action, Crime, Thriller","MovieName":"Wrath of Man","Rating":"7.2/10","id":6,"img":"https://m.media-amazon.com/images/M/MV5BNGVkOTlhOTktNjZiNS00NDg3LWIxMDAtZTY5Y2E0YjllN2IxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of millions of dollars around Los Angeles each week.","Duration":"1h 59min","Genre":"Action, Crime, Thriller","MovieName":"Wrath of Man","Rating":"7.2/10","id":7,"img":"https://m.media-amazon.com/images/M/MV5BNGVkOTlhOTktNjZiNS00NDg3LWIxMDAtZTY5Y2E0YjllN2IxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"The plot follows H, a cold and mysterious character working at a cash truck company responsible for moving hundreds of millions of dollars around Los Angeles each week.","Duration":"1h 59min","Genre":"Action, Crime, Thriller","MovieName":"Wrath of Man","Rating":"7.2/10","id":8,"img":"https://m.media-amazon.com/images/M/MV5BNGVkOTlhOTktNjZiNS00NDg3LWIxMDAtZTY5Y2E0YjllN2IxXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"}],"moviedata2":[{"Description":"A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.","Duration":"1h 36min","Genre":"Crime, Drama","MovieName":"12 Angry Men","Rating":"9.0/10","id":10,"img":"https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.","Duration":"2h 28min","Genre":"Action, Adventure, Sci-Fi","MovieName":"Inception","Rating":"8.8/10","id":2,"img":"https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.","Duration":"2h 22min","Genre":"Drama, Romance","MovieName":"Forrest Gump","Rating":"8.8/10","id":3,"img":"https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY268_CR1,0,182,268_AL__QL50.jpg"},{"Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.","Duration":"2h 34min","Genre":"Crime, Drama","MovieName":"Pulp Fiction","Rating":"8.9/10","id":4,"img":"https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR1,0,182,268_AL__QL50.jpg"},{"Description":"When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.","Duration":"2h 16min","Genre":"Action, Sci-Fi","MovieName":"The Matrix","Rating":"8.7/10","id":5,"img":"https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.","Duration":"2h 7min","Genre":"Crime, Drama, Mystery","MovieName":"Se7en","Rating":"8.6/10","id":6,"img":"https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.","Duration":"2h 49min","Genre":"Adventure, Drama, Sci-Fi","MovieName":"Interstellar","Rating":"8.6/10","id":7,"img":"https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.","Duration":"1h 58min","Genre":"Crime, Drama, Thriller","MovieName":"The Silence of the Lambs","Rating":"8.6/10","id":8,"img":"https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"},{"Description":"Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.","Duration":"3h","Genre":"Biography, Crime, Drama","MovieName":"The Wolf of Wall Street","Rating":"8.2/10","id":9,"img":"https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_UX182_CR0,0,182,268_AL__QL50.jpg"}]};
+    console.log(jsondata);
+    
+    const data = jsondata[jsonfile];
+    
+
+    console.log(data)
+    let filterdata = data.filter(function (e) {
+      return e.id == id;
+    });
+    const movie = filterdata[0];
+    console.log(movie.MovieName);
+
+    
+    document.getElementById("moviename").innerHTML = movie.MovieName
+    var i = document.getElementById("image");
+    i.src = movie.img;
+    document.getElementById("description").innerHTML = movie.Description
+    document.getElementById("rating").innerHTML = "Rating: " + movie.Rating
+    document.getElementById("duration").innerHTML = "Duration: " + movie.Duration
+    document.getElementById("genre").innerHTML = "Genres: " + movie.Genre
+  };
+</script>
+<br /><br />
+
+<br />
+<button type="button"><a href="/movie_cards/" style="color: inherit; text-decoration: none">Go to Home</a></button>
+<div class="movie-container">
+  <div id="moviename"></div>
+  <div class="image-container"><img id="image" alt="picture" /></div>
+  <div class="details">
+    <div id="description"></div>
+    <br />
+    <div id="rating"></div>
+    <div id="duration"></div>
+    <div id="genre"></div>
+  </div>
+</div>
+
+        </div></body>
+</html>

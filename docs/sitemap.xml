@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://dhruvpeter.github.io/movie_cards/moviedetails/</loc>
+    <lastmod>2021-06-30T18:01:46+05:30</lastmod>
+  </url><url>
+    <loc>http://dhruvpeter.github.io/movie_cards/movies/</loc>
+    <lastmod>2021-06-30T18:01:46+05:30</lastmod>
+  </url><url>
+    <loc>http://dhruvpeter.github.io/movie_cards/</loc>
+    <lastmod>2021-06-25T14:20:37+05:30</lastmod>
+  </url><url>
+    <loc>http://dhruvpeter.github.io/movie_cards/categories/</loc>
+  </url><url>
+    <loc>http://dhruvpeter.github.io/movie_cards/tags/</loc>
+  </url>
+</urlset>

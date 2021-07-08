@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Movies</title>
+    <link>http://dhruvpeter.github.io/movie_cards/</link>
+    <description>Recent content on Movies</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Jun 2021 14:20:37 +0530</lastBuildDate><atom:link href="http://dhruvpeter.github.io/movie_cards/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moviedetails</title>
+      <link>http://dhruvpeter.github.io/movie_cards/moviedetails/</link>
+      <pubDate>Wed, 30 Jun 2021 18:01:46 +0530</pubDate>
+      
+      <guid>http://dhruvpeter.github.io/movie_cards/moviedetails/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
