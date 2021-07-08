@@ -33,6 +33,8 @@ Checkout https://gohugo.io/getting-started/quick-start/ for getting started.
 - [Shortcodes](#shortcodes)
 - [Creating custom shortcodes](#creating-custom-shortcodes)
 - [Data files](#data-files)
+- [Content Organization](#content-organization)
+- [Building your site](#building-your-site)
 ## Installing in windows
 * Goto https://github.com/gohugoio/hugo/releases.
 * Find the release for windows in the bottom of the page and download the zip file.
@@ -147,6 +149,12 @@ https://www.zeolearn.com/magazine/develop-a-theme-for-hugo
 
 ## Content Organization
 * Read https://gohugo.io/content-management/organization/
+
+## Building your site
+* Run `hugo` in terminal.
+* A new folder `public` will be created containing your finished website.
+* `public` folder is overwritten when building, if you delete a file in your content folder, it won’t be deleted in the public folder.  
+* So delete the `public` folder before a re-build. 
 ## Notes
 * All the templates are placed inside the layout.
 * 2 types of content - List and Single
