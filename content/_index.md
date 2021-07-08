@@ -4,6 +4,7 @@ date: 2021-06-25T14:20:37+05:30
 Description: ""
 Tags: []
 Categories: []
+url: movie_cards/
 ---
 <!-- Short code to place the title in the center -->
 {{< center-title >}}
