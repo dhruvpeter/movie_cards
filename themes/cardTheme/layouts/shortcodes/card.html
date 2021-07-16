@@ -9,7 +9,7 @@
 {{ $jsonfile := (.Get 0)}}
 
 <!-- Loads the json file array into "data" and iterates through it -->
-{{ $data := index .Site.Data (.Get 0) }}
+{{ $data := index .Site.Data $jsonfile }}
 {{ range $data }}
 <!-- This div will be repeating -->
 <div class="card">
