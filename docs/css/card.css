@@ -6,7 +6,6 @@
   border-radius: 15px;
   perspective: 1px;
   height: 450px;
-  float: left;
 }
 
 .card:hover {
@@ -31,4 +30,10 @@ h5{
 i{
   margin-top: 10px;
   cursor: pointer;
+}
+
+.tiles{
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
 }

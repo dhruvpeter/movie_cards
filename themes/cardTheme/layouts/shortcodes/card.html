@@ -1,5 +1,5 @@
 <!-- CSS files -->
-<link rel="stylesheet" href="./css/card.css" />
+<link rel="stylesheet" href="css/card.css" />
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -10,25 +10,33 @@
 
 <!-- Loads the json file array into "data" and iterates through it -->
 {{ $data := index .Site.Data $jsonfile }}
-{{ range $data }}
-<!-- This div will be repeating -->
-<div class="card">
-  <!-- Passing the movie id and json file name as parameters through url -->
-  <a href="moviedetails?id={{ .id }}&data={{ $jsonfile }}" style="color: inherit">
-    <img src="{{ .img }}" alt="Avatar" style="width: 100%" />
-  </a>
-  <div class="details">
-    <a href="moviedetails?id={{ .id }}&data={{$jsonfile}}" style="color: inherit; text-decoration: none">
-      <h5><b>{{ .MovieName }}</b></h5>
+<div class="tiles">
+  {{ range $data }}
+  <!-- This div will be repeating -->
+  <div class="card">
+    <!-- Passing the movie id and json file name as parameters through url -->
+    <a
+      href="moviedetails?id={{ .id }}&data={{ $jsonfile }}"
+      style="color: inherit"
+    >
+      <img src="{{ .img }}" alt="Avatar" style="width: 100%" />
     </a>
-    <p>Duration: {{ .Duration }}</p>
-    <p>Rating: {{ .Rating }}</p>
-    <i onclick="Like(this)" class="far fa-heart"></i>
-    <span>Like</span>
+    <div class="details">
+      <a
+        href="moviedetails?id={{ .id }}&data={{$jsonfile}}"
+        style="color: inherit; text-decoration: none"
+      >
+        <h5><b>{{ .MovieName }}</b></h5>
+      </a>
+      <p>Duration: {{ .Duration }}</p>
+      <p>Rating: {{ .Rating }}</p>
+      <i onclick="Like(this)" class="far fa-heart"></i>
+      <span>Like</span>
+    </div>
   </div>
-</div>
 
-{{ end }}
+  {{ end }}
+</div>
 
 <script>
   // Function to toggle between two icons on clicking like
